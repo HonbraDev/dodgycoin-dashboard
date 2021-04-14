@@ -67,7 +67,7 @@ const Home = () => {
                   </Card>
                 ))}
               <Link href="/howtolink">
-                <Card className="cursor-pointer hover:underline">
+                <Card className="cursor-pointer space-y-1 text-gray-600 hover:text-black transition-colors">
                   <h1 className="text-3xl font-semibold">Add more accounts</h1>
                   <small className="text-sm">
                     Learn how to link your account
