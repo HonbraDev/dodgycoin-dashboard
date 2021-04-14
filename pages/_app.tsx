@@ -4,6 +4,7 @@ import firebase from "firebase/app";
 import "firebase/database";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
+import { AppProps } from "next/dist/next-server/lib/router/router";
 
 if (!firebase.apps.length)
   firebase.initializeApp({
@@ -17,7 +18,7 @@ if (!firebase.apps.length)
     appId: "1:605200061107:web:bbe334e075abacdc8016c6",
   });
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
 
   useEffect(

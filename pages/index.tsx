@@ -50,21 +50,29 @@ const Home = () => {
                   return { id: entry[0], ...entry[1] };
                 })
                 .map((user) => (
-                  <Card key={user.id} className="space-y-1">
-                    <h1 className="text-3xl font-semibold">{user.monies} Ð</h1>
-                    {user.cache ? (
-                      <>
-                        <div className="flex items-center space-x-2">
-                          <img className="w-5 h-5 rounded-full" src={user.cache.avatarUrl} />
-                          <p>
-                            {user.cache.username}
-                          </p>
-                        </div>
-                      </>
-                    ) : (
-                      <small className="text-sm">{user.id}</small>
-                    )}
-                  </Card>
+                  <Link href={`/users/${user.id}`}>
+                    <Card
+                      key={user.id}
+                      className="space-y-1 hover:text-gray-600 transition-colors cursor-pointer"
+                    >
+                      <h1 className="text-3xl font-semibold">
+                        {user.monies} Ð
+                      </h1>
+                      {user.cache ? (
+                        <>
+                          <div className="flex items-center space-x-2">
+                            <img
+                              className="w-5 h-5 rounded-full"
+                              src={user.cache.avatarUrl}
+                            />
+                            <p>{user.cache.username}</p>
+                          </div>
+                        </>
+                      ) : (
+                        <small className="text-sm">{user.id}</small>
+                      )}
+                    </Card>
+                  </Link>
                 ))}
               <Link href="/howtolink">
                 <Card className="cursor-pointer space-y-1 text-gray-600 hover:text-black transition-colors">
