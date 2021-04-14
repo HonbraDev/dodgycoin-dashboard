@@ -8,10 +8,10 @@
     "start": "next start"
   },
   "dependencies": {
+    "@dogehouse/kebab": "^0.2.6",
     "@tailwindcss/forms": "^0.3.2",
     "@tailwindcss/typography": "^0.4.0",
     "firebase": "^8.4.1",
-    "firebase-admin": "^9.6.0",
     "next": "10.1.3",
     "react": "17.0.2",
     "react-dom": "17.0.2",
