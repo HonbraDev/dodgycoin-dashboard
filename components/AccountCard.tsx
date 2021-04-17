@@ -3,7 +3,7 @@ import Card from "./Card";
 
 const AccountCard = ({ user }: { user: { id: string } & User }) => (
   <Card className="space-y-1 text-center">
-    <h1 className="text-3xl">
+    {/* <h1 className="text-3xl">
       <span className="font-semibold">{user.monies}</span> <span>Ð</span>
     </h1>
     {user.cache ? (
@@ -15,7 +15,7 @@ const AccountCard = ({ user }: { user: { id: string } & User }) => (
       </>
     ) : (
       <small className="text-sm">{user.id}</small>
-    )}
+    )} */}
   </Card>
 );
 
