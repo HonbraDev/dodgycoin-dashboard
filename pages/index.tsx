@@ -14,25 +14,20 @@ const Home = () => {
       <Head>
         <title>DodgyCoin Dashboard</title>
       </Head>
-      <Header title="Your DodgyCoin accounts" />
+      <Header title="DodgyCoin" />
 
-      {/*{user ? (
-        <>
-           <AccountOverview githubID={user.providerData[0].uid} />
-          <Link href="/howtolink">
-            <a className="block mt-2 text-gray-500 hover:underline">
-              How to link your account
-            </a>
-          </Link> 
-          
-        </>
-      ) : (
-        <p>Sign in to see DodgyCoin accounts</p>
-      )} */}
-      <p>
-        Sorry, but this dashboard has been disabled due to database migration.
-        Thank you for understanding.
-      </p>
+      <div className="prose">
+        <p>
+          Sorry, but this dashboard has been disabled due to database migration.
+          Thank you for understanding.
+        </p>
+        <p>
+          There's a REST API though: <a href="/api/top">/api/top</a>
+        </p>
+        <p>
+          Commands page: <a href="/commands">/commands</a>
+        </p>
+      </div>
     </>
   );
 };

@@ -1,15 +1,11 @@
-import { User as DogeHouseUser } from "@dogehouse/kebab";
+import { UUID } from "@dogehouse/kebab";
 
 export type User = {
-  monies: number;
-  github?: string;
-  cache?: {
-    avatarUrl: DogeHouseUser["avatarUrl"];
-    bio: DogeHouseUser["bio"];
-    displayName: DogeHouseUser["displayName"];
-    id: DogeHouseUser["id"];
-    username: DogeHouseUser["username"];
-  };
+  id: UUID;
+  money: number;
+  githubId?: string;
+  fake?: boolean;
+  isAdmin: boolean;
 };
 
 export type AccountList = Record<string, User>;

@@ -10,6 +10,7 @@
   "dependencies": {
     "@dogehouse/kebab": "^0.2.6",
     "@octokit/rest": "^18.5.2",
+    "@supabase/supabase-js": "^1.11.6",
     "@tailwindcss/forms": "^0.3.2",
     "@tailwindcss/typography": "^0.4.0",
     "firebase": "^8.4.1",
