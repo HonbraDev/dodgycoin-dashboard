@@ -9,7 +9,7 @@ import { Octokit } from "@octokit/rest";
 const octokit = new Octokit();
 
 const HowToLink = () => {
-  const [user, loading, error] = useAuthState(firebase.auth());
+  /*  const [user, loading, error] = useAuthState(firebase.auth());
   const [username, setUsername] = useState<string | null>(null);
 
   useEffect(() => {
@@ -21,7 +21,7 @@ const HowToLink = () => {
         .then((ghuser) => setUsername(ghuser.data.login))
         .catch(console.error);
     }
-  }, [user]);
+  }, [user]); */
 
   return (
     <>
@@ -29,7 +29,7 @@ const HowToLink = () => {
         <title>How to link your account - DodgyCoin Dashboard</title>
       </Head>
       <Header title="How to link your DodgyCoin account" goBack />
-      <div className="prose">
+      {/* <div className="prose">
         <ol>
           <li>Go into a room with the DodgyCoin bot.</li>
           <li>
@@ -41,7 +41,11 @@ const HowToLink = () => {
         <p>
           To unlink your account, type <code>$unlinkaccount</code>.
         </p>
-      </div>
+      </div> */}
+      <p>
+        Sorry, but this dashboard has been disabled due to database migration.
+        Thank you for understanding.
+      </p>
     </>
   );
 };
