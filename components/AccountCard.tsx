@@ -1,22 +1,31 @@
+import { DetailedHTMLProps, HTMLAttributes } from "react";
 import { User } from "../utils/types";
 import Card from "./Card";
 
-const AccountCard = ({ user }: { user: { id: string } & User }) => (
-  <Card className="space-y-1 text-center">
-    {/* <h1 className="text-3xl">
-      <span className="font-semibold">{user.monies}</span> <span>Ð</span>
-    </h1>
-    {user.cache ? (
-      <>
-        <div className="flex items-center justify-center space-x-2">
-          <img className="w-5 h-5 rounded-full" src={user.cache.avatarUrl} />
-          <p>{user.cache.username}</p>
-        </div>
-      </>
-    ) : (
-      <small className="text-sm">{user.id}</small>
-    )} */}
-  </Card>
-);
+const AccountCard = ({
+  className,
+  account,
+  ...props
+}: { account: User } & DetailedHTMLProps<
+  HTMLAttributes<HTMLDivElement>,
+  HTMLDivElement
+>) => {
+  return (
+    <Card
+      key={account.id}
+      title={account.id}
+      className={`text-center space-y-2 ${className}`}
+      {...props}
+    >
+      <section>
+        <h1 className="text-4xl font-bold">{account.money} Ð</h1>
+      </section>
+      <section className="flex space-x-1 justify-center items-center">
+        <div className="h-5 w-5 bg-black rounded-full"></div>
+        <h1 className="text-lg">Username</h1>
+      </section>
+    </Card>
+  );
+};
 
 export default AccountCard;

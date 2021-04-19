@@ -12,7 +12,8 @@ const sizeClassnames = {
 const colorClassnames = {
   primary:
     "text-white bg-blue-500 hover:bg-blue-600 disabled:text-white disabled:bg-blue-600",
-    secondary: "text-white bg-gray-500 hover:bg-gray-600 disabled:text-white disabled:bg-gray-600",
+  secondary:
+    "text-white bg-gray-500 hover:bg-gray-600 disabled:text-white disabled:bg-gray-600",
 };
 
 export type ButtonProps = DetailedHTMLProps<
@@ -25,7 +26,7 @@ export type ButtonProps = DetailedHTMLProps<
   transition?: boolean;
 };
 
-export const Button: React.FC<ButtonProps> = ({
+const Button: React.FC<ButtonProps> = ({
   children,
   size = "big",
   color = "primary",
@@ -53,3 +54,5 @@ export const Button: React.FC<ButtonProps> = ({
     </button>
   );
 };
+
+export default Button;

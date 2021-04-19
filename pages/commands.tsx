@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Header from "../components/Header";
 
-const HowToLink = () => {
+const Commands = () => {
   return (
     <>
       <Head>
@@ -38,4 +38,4 @@ const HowToLink = () => {
     </>
   );
 };
-export default HowToLink;
+export default Commands;

@@ -1,39 +1,21 @@
 import Layout from "../components/Layout";
 import "../styles/globals.css";
-import firebase from "firebase/app";
-import "firebase/database";
-import { useRouter } from "next/router";
-import { useEffect } from "react";
 import { AppProps } from "next/dist/next-server/lib/router/router";
+import { createClient } from "@supabase/supabase-js";
+import { SupabaseContextProvider } from "use-supabase";
 
-if (!firebase.apps.length)
-  firebase.initializeApp({
-    apiKey: "AIzaSyBsqzEwQQCNjEYYhOkAHKPXtGupM7j802w",
-    authDomain: "dodgycoin.firebaseapp.com",
-    databaseURL:
-      "https://dodgycoin-default-rtdb.europe-west1.firebasedatabase.app",
-    projectId: "dodgycoin",
-    storageBucket: "dodgycoin.appspot.com",
-    messagingSenderId: "605200061107",
-    appId: "1:605200061107:web:bbe334e075abacdc8016c6",
-  });
+const supabase = createClient(
+  "https://hqrfqxsuwgfaqkmvvqoy.supabase.co",
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTYxODU1NzAzNywiZXhwIjoxOTM0MTMzMDM3fQ.7vy1z2ocd48OmwRiGqo70Pr5EJeUdH0POs0sxYjFK3Q"
+);
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const router = useRouter();
-
-  useEffect(
-    () =>
-      router.events.on("routeChangeStart", () => {
-        console.log("Stopping refresh");
-        firebase.database().ref("users").off();
-      }),
-    []
-  );
-
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <SupabaseContextProvider client={supabase}>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </SupabaseContextProvider>
   );
 }
 
