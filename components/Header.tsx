@@ -1,11 +1,9 @@
-import LoginLogout from "./LoginLogout";
 import Link from "next/link";
 
 const Header = ({ title, goBack }: { title: string; goBack?: boolean }) => (
   <div className="space-y-2 mb-4">
     <div className="flex justify-between items-center">
       <h1 className="text-4xl font-bold">{title}</h1>
-      {/* <LoginLogout /> */}
     </div>
     {goBack ? (
       <div>
