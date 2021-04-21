@@ -15,6 +15,7 @@ const apiDocs = () => {
       <Head>
         <title>DodgyCoin API documentation</title>
       </Head>
+      
       <div className="prose">
         <section>
           <h1>

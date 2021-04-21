@@ -6,6 +6,7 @@ export type User = {
   githubId?: string;
   fake?: boolean;
   isAdmin: boolean;
+  dashboardId?: UUID;
 };
 
 export type AccountList = Record<string, User>;

@@ -1,21 +1,36 @@
 import Head from "next/head";
-import Header from "../components/Header";
 import "firebase/auth";
-import { Octokit } from "@octokit/rest";
-
-const octokit = new Octokit();
+import { useSupabase } from "use-supabase";
 
 const HowToLink = () => {
+  const supabase = useSupabase();
+  const user = supabase.auth.user();
   return (
     <>
       <Head>
         <title>How to link your account - DodgyCoin Dashboard</title>
       </Head>
-      <Header title="How to link your DodgyCoin account" goBack />
-      <p>
-        Sorry, but this dashboard has been disabled due to database migration.
-        Thank you for understanding.
-      </p>
+
+      <div className="prose">
+        <h1 className="text-center">How to link your account</h1>
+        {user ? (
+          <>
+            <ul>
+              <li>Go to a room with the DodgyCoin bot</li>
+              <li>
+                Send <code>$linkaccount {user.id}</code>
+              </li>
+            </ul>
+            <p>
+              To unlink, send <code>$unlinkaccount</code>
+            </p>
+          </>
+        ) : (
+          <>
+            <p>Sorry, but you need to sign in to link your account.</p>
+          </>
+        )}
+      </div>
     </>
   );
 };
