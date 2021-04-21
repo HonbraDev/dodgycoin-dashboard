@@ -7,8 +7,8 @@ const Commands = () => {
       <Head>
         <title>Commands - DodgyCoin Dashboard</title>
       </Head>
-      <Header title="Commands" goBack />
       <div className="prose">
+        <h1>Commands</h1>
         <ul>
           <li>
             $monies ?{"<"}user{">"} - check your balance
