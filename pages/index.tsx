@@ -33,15 +33,21 @@ const Home = () => {
         <title>DodgyCoin Dashboard</title>
       </Head>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        {accounts.map((account) => (
-          <Link href={`/users/${account.id}`}>
-            <AccountCard account={account} className="cursor-pointer" />
-          </Link>
-        ))}
-      </div>
+      {user ? (
+        <>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {accounts.map((account) => (
+              <Link href={`/users/${account.id}`}>
+                <AccountCard account={account} className="cursor-pointer" />
+              </Link>
+            ))}
+          </div>
 
-      <Button className="mx-auto mt-4">Refresh</Button>
+          <Button className="mx-auto mt-4">Refresh</Button>
+        </>
+      ) : (
+        <div>Sign in to see all your DodgyCoin accounts in one place.</div>
+      )}
     </>
   );
 };
